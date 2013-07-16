@@ -1,0 +1,20 @@
+{
+  "name": "danblog3",
+  "version": "0.0.0",
+  "description": "A new approach to blogging for Dan.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Dan Finlay",
+  "license": "BSD",
+   "dependencies": {
+    "through": "~2.3.4",
+    "ecstatic": "~0.4.5",
+    "trumpet": "~1.5.4",
+    "hyperspace": "~0.1.4",
+    "brfs": "0.0.6",
+    "underscore": "~1.5.1"
+  }
+}

@@ -4,6 +4,7 @@ var url = require('url')
 var ecstatic = require('ecstatic')
 var _ = require('underscore')
 var domain = require('domain')
+var landingPageHandler = require('./landingPageHandler')
 var lifeUpdateHandler = require('./lifeUpdateHandler')
 
 http.createServer(function( req, res ){
@@ -19,8 +20,7 @@ http.createServer(function( req, res ){
 
 		//Handling home page:
 		}else if(req.url === '' || req.url === '/' || req.url === '/home'){
-			res.writeHead(200)
-			fs.createReadStream('./index.html').pipe(res)
+			landingPageHandler(req, res)
 
 		//Statically routing all other requests:
 		}else{
