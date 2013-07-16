@@ -1,0 +1,64 @@
+body{
+	font-family: 'Noto Sans', sans-serif;
+	padding:0px;
+	margin:0px;
+	background-color:rgb(138,168,126);
+/*	background:url('./images/leaf-texture.jpg');
+	background-size:100%;
+	background-repeat:repeat-y;*/
+}
+#header{
+	background-color:rgb(138,168,126);
+	background:url('../img/leaf-texture.jpg');
+	background-size:100%;
+	padding:10px;
+	/*box-shadow:0px -5px 10px rgba(0,0,0,0.4) inset;*/
+	margin-top:-10px;
+}
+h1, .brand{
+	font-family: 'Cherry Swash', cursive;
+	color:#FA0;
+	margin:15px 15px 0px 10px;
+	text-shadow:2px 2px 20px rgba(0,0,0,0.55);
+	/*text-shadow:0px -1px 3px rgba(255,255,255,0.4);*/
+	transition: all, 0.5s;
+	-moz-transition: all, 0.5s;
+	-webkit-transition: all, 0.5s;
+	-opera-transition: all, 0.5s;
+	-ie-transition: all, 0.5s;
+}
+h1:hover, .brand:hover{
+	-moz-transform: scale(1.05) rotate(5deg) translateX(10px) translateY(10px) skewX(0deg) skewY(0deg);
+	-webkit-transform: scale(1.05) rotate(5deg) translateX(10px) translateY(10px) skewX(0deg) skewY(0deg);
+	-o-transform: scale(1.05) rotate(5deg) translateX(10px) translateY(10px) skewX(0deg) skewY(0deg);
+	-ms-transform: scale(1.05) rotate(5deg) translateX(10px) translateY(10px) skewX(0deg) skewY(0deg);
+	transform: scale(1.05) rotate(5deg) translateX(10px) translateY(10px) skewX(0deg) skewY(0deg);
+}
+.brand{
+	float:right;
+}
+.active{
+	border:none;
+}
+a{
+	transition: all, 1s;
+	-moz-transition: all, 1s;
+	-webkit-transition: all, 1s;
+	-opera-transition: all, 1s;
+	-ie-transition: all, 1s;
+}
+.navbar-inner{
+	box-shadow:0px 0px 10px rgba(0,0,0,0.6);
+}
+h3.tagline{
+	color:#010;
+	margin-left:15px;
+	text-shadow:0px -1px 3px rgba(255,255,255,0.6);
+	opacity:1.0;
+	margin-bottom:5px;
+	transition: all, 1s;
+	-moz-transition: all, 1s;
+	-webkit-transition: all, 1s;
+	-opera-transition: all, 1s;
+	-ie-transition: all, 1s;
+}
