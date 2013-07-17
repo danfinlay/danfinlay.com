@@ -15,7 +15,7 @@ http.createServer(function( req, res ){
 	d.run(function(){
 
 		//Handling all sub-sections of site:
-		if(req.url === '/doings*' || req.url === '/teachings*'){
+		if(req.url.match('^/doings*') || req.url.match('^/teachings*')){
 			lifeUpdateHandler(req, res)
 
 		//Handling home page:
@@ -27,4 +27,4 @@ http.createServer(function( req, res ){
 			ecstatic({ root: __dirname + '/static' })(req, res)
 		}	
 	})	
-}).listen(8087)
+}).listen(8088)
