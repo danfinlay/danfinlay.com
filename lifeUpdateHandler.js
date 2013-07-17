@@ -12,7 +12,7 @@ module.exports = function(req, res){
 	})
 	d.run(function(){
 		var queryPaths = url.parse(req.url, true).path.split('/')
-		console.log("Requested: "+queryPaths)
+		//console.log("Requested: "+queryPaths)
 		res.writeHead(200)
 
 		fs.readdir( __dirname + '/dynamic/' + queryPaths[2] , function(e, files){
