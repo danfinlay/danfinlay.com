@@ -7,6 +7,8 @@ var domain = require('domain')
 var landingPageHandler = require('./landingPageHandler')
 var lifeUpdateHandler = require('./lifeUpdateHandler')
 
+var port = process.env.PORT || 8088
+
 http.createServer(function( req, res ){
 	var d = domain.create()
 	d.on('error', function(er){
@@ -27,4 +29,4 @@ http.createServer(function( req, res ){
 			ecstatic({ root: __dirname + '/static' })(req, res)
 		}	
 	})	
-}).listen(8088)
+}).listen(port)
