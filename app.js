@@ -8,6 +8,7 @@ var landingPageHandler = require('./landingPageHandler')
 var lifeUpdateHandler = require('./lifeUpdateHandler')
 
 var port = process.env.PORT || 8088
+console.log("Booting up server on port "+port)
 
 http.createServer(function( req, res ){
 	var d = domain.create()
