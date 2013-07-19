@@ -4,6 +4,7 @@ var url = require('url');
 var ecstatic = require('ecstatic');
 var _ = require('underscore');
 var domain = require('domain');
+var request = require('request');
 var landingPageHandler = require('./landingPageHandler');
 var lifeUpdateHandler = require('./lifeUpdateHandler');
 
@@ -27,7 +28,12 @@ http.createServer(function( req, res ){
 
     //Statically routing all other requests:
     }else{
-      ecstatic({ root: __dirname + '/static' })(req, res);
-    }  
+      console.log("Requesting "+'http://149.47.131.249/~danfinla'+req.url)
+      request.get('http://danfinlay.com/'+req.url).pipe(res);
+      //ecstatic({ root: __dirname + '/static' })(req, res);
+    }
+    // else{
+    // 	ecstatic({ root: 'http://149.47.131.249'})(req, res);
+    // }
   })  
 }).listen(port);

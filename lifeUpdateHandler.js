@@ -19,7 +19,7 @@ module.exports = function(req, res){
 
       var categoryTrumpet = trumpet();
       categoryTrumpet.selectAll('.contextSensitive', function(elem){
-        fs.createReadStream(__dirname+'/templates/'+queryPaths[2]+'.html');
+        fs.createReadStream(__dirname+'/templates/'+queryPaths[2]+'.html')
         .pipe(elem.createWriteStream());
       })
 
@@ -43,14 +43,13 @@ module.exports = function(req, res){
             var ews = elem.createWriteStream();
             //console.log("Returning "+entriesLength+" articles: "+JSON.stringify(entries))
             for(i = 0; i < entriesLength; i++){
-              fs.createReadStream(__dirname+'/dynamic/'+queryPaths[2]+'/'+entries[i]);
+              fs.createReadStream(__dirname+'/dynamic/'+queryPaths[2]+'/'+entries[i])
               .pipe(through(function(chunk){
-                //console.log("Queueing this chunk: "+chunk.toString())
                 res.write(chunk);
               })).pipe(ews);
             }
           }
-        }
+        } 
       })
 
       fs.createReadStream(__dirname+'/index.html')
