@@ -64,11 +64,11 @@ h3.tagline{
 }
 
 .tech-span{
-	background:#74C164;
-	border-radius: 5px;
+/*	background:#74C164;
+	border-radius: 5px;*/
 	padding:10px;
 	margin-bottom:20px;
-	box-shadow:3px 3px 10px rgba(0,0,0,0.3) inset;
+/*	box-shadow:3px 3px 10px rgba(0,0,0,0.3) inset;*/
 }
 .tech-span h3{
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
