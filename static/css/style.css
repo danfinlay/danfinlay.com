@@ -67,9 +67,18 @@ h3.tagline{
 	background:#74C164;
 	border-radius: 5px;
 	padding:10px;
+	margin-bottom:20px;
 	box-shadow:3px 3px 10px rgba(0,0,0,0.3) inset;
 }
 .tech-span h3{
 	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 	font-weight:bold;
 }
+
+#jobOffers{
+	bottom:35%;
+-moz-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
+		-webkit-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
+        -o-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
+        -ms-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
+        transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);}
