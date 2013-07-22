@@ -43,9 +43,10 @@ module.exports = function(req, res){
             var ews = elem.createWriteStream();
             //console.log("Returning "+entriesLength+" articles: "+JSON.stringify(entries))
             for(i = 0; i < entriesLength; i++){
+              
               fs.createReadStream(__dirname+'/dynamic/'+queryPaths[2]+'/'+entries[i])
               .pipe(through(function(chunk){
-                res.write(chunk);
+                this.queue(chunk);
               })).pipe(ews);
             }
           }

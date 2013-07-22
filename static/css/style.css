@@ -2,14 +2,16 @@ body{
 	font-family: 'Noto Sans', sans-serif;
 	padding:0px;
 	margin:0px;
-	background-color:rgb(138,168,126);
+
+	/*background-color:rgb(138,168,126);*/
+	background-color:#EEE;
 /*	background:url('./images/leaf-texture.jpg');
 	background-size:100%;
 	background-repeat:repeat-y;*/
 }
 #header{
 	background-color:rgb(138,168,126);
-	background:url('../img/leaf-texture.jpg');
+	background:url('/img/leaf-texture.jpg');
 	background-size:100%;
 	padding:10px;
 	/*box-shadow:0px -5px 10px rgba(0,0,0,0.4) inset;*/
@@ -41,11 +43,11 @@ h1:hover, .brand:hover{
 	border:none;
 }
 a{
-	transition: all, 1s;
-	-moz-transition: all, 1s;
-	-webkit-transition: all, 1s;
-	-opera-transition: all, 1s;
-	-ie-transition: all, 1s;
+	/*transition: font-size, 1s;
+	-moz-transition: font-size, 1s;
+	-webkit-transition: font-size, 1s;
+	-opera-transition: font-size, 1s;
+	-ie-transition: font-size, 1s;*/
 }
 .navbar-inner{
 	box-shadow:0px 0px 10px rgba(0,0,0,0.6);
@@ -81,4 +83,26 @@ h3.tagline{
 		-webkit-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
         -o-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
         -ms-transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
-        transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);}
+        transform: scale(1) rotate(-25deg) translateX(0px) translateY(80px) skewX(0deg) skewY(0deg);
+      }
+
+.image_carousel {
+    padding: 15px 0 15px 40px;
+}
+.image_carousel img {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 9px;
+    margin: 7px;
+    display: block;
+
+    float: left;
+}
+.image_carousel a {
+    display: block;
+    float: left;
+}
+.clearfix {
+    float: none;
+    clear: both;
+}

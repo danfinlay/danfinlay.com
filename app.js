@@ -8,7 +8,7 @@ var request = require('request');
 var landingPageHandler = require('./landingPageHandler');
 var lifeUpdateHandler = require('./lifeUpdateHandler');
 
-var port = process.env.PORT || 8088;
+var port = process.env.PORT || 8089;
 console.log("Booting up server on port "+port);
 
 http.createServer(function( req, res ){
@@ -28,12 +28,13 @@ http.createServer(function( req, res ){
 
     //Statically routing all other requests:
     }else{
-      console.log("Requesting "+'http://149.47.131.249/~danfinla'+req.url)
+
+      //To run the site routed from my old site's server:
+      console.log("Requesting "+'http://danfinlay.com/'+req.url)
       request.get('http://danfinlay.com/'+req.url).pipe(res);
-      //ecstatic({ root: __dirname + '/static' })(req, res);
+
+      //To run the site locally:
+      // ecstatic({ root: __dirname + '/static' })(req, res);
     }
-    // else{
-    // 	ecstatic({ root: 'http://149.47.131.249'})(req, res);
-    // }
   })  
 }).listen(port);
