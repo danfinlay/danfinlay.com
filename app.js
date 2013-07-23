@@ -30,7 +30,7 @@ http.createServer(function( req, res ){
     }else{
 
       //To run the site routed from my old site's server:
-      console.log("Requesting "+'http://danfinlay.com/'+req.url)
+      // console.log("Requesting "+'http://danfinlay.com/'+req.url)
       request.get('http://danfinlay.com/'+req.url).pipe(res);
 
       //To run the site locally:
