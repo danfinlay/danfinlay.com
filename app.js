@@ -29,7 +29,7 @@ http.createServer(function( req, res ){
     //Statically routing all other requests:
     }else{
 
-      //To run the site routed from my old site's server:
+      //To run the resources routed from my old site's server:
       // console.log("Requesting "+'http://danfinlay.com/'+req.url)
       request.get('http://danfinlay.com/'+req.url).pipe(res);
 
