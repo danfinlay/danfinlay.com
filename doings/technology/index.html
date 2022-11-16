@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en" ng-app="DanApp">
+<head>
+<title>Dan Finlay's Home Page</title>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.min.css">
+<link href='http://fonts.googleapis.com/css?family=Noto+Sans|Cherry+Swash:700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/style.css">
+<script type="text/javascript" src="/js/jquery-colors.js"></script>
+<script src="/lightbox/js/lightbox-2.6.min.js"></script>
+<link href="/lightbox/css/lightbox.css" rel="stylesheet" />
+<script type="text/javascript">
+
+  //Randomize & cycle tagline:
+var taglines = [
+  "A specimen of human life.",
+  "Certainy a person.",
+  "Probably a person.",
+  "Can you really define person?",
+  "A person.  There, I said it.",
+  "A gloriously humble man.",
+  "Fueled by burritos, preferably.",
+  'A website you can "trust".',
+  "Apparently capable.",
+  "thinks he thinks.",
+  "Still kicking, despite things.",
+  "The man, the website.",
+  "Precisely vague.",
+  "Deceptively honest.",
+  "is what he ate.",
+  "may be immortal.",
+  "has a variety of reputations."
+  ]
+var tagNumber = Math.round((Math.random()*100))%taglines.length;
+
+function readyFunction(){
+  $('.tagline').text(taglines[tagNumber]);
+  var newTagline = window.setInterval(function(){
+    if(++tagNumber>=taglines.length){tagNumber=0;}
+    $('.tagline').fadeOut('slow',
+          function(){
+            $('.tagline').text(taglines[tagNumber]);
+        $('.tagline').fadeIn('slow');
+      })
+  }, 3500);
+}
+</script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="span4" style="margin:0;padding:0">
+    <div class="row-fluid" id="header">
+      <div class="span4">
+        <h1>Dan Finlay</h1>
+      </div>
+      <div class="span8">
+        <h3 class="tagline">A man of many hats.</h3>
+      </div>
+    </div>
+    <div class="navbar" style="margin-bottom:0px" ng-controller="MenuCtrl">
+      <div class="navbar-inner" style="border-radius:0px;">
+          <ul nav-tabs class="nav" role="navigation">
+            <li>
+              <a href="/">
+                Home
+              </a>
+            </li>
+            <li class="dropdown">
+              <a id="drop1" href="/doings" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                Doings
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="/doings/technology">
+                    Technology
+                  </a>
+                </li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="/doings/comedy">
+                    Comedy
+                  </a>
+              </li>
+              <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="/doings/art">
+                    Art
+                </a>
+              </li>
+              <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="http://tricera-tops.com">
+                    Screen Printing
+                  </a>
+              </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                Teachings
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="/teachings/current-classes">
+                    Current Classes
+                  </a>
+                </li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="/teachings/online-classes">
+                    Virtual Classes
+                  </a>
+              </li>
+              <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="/teachings/previous-classes">
+                    Past Classes
+                  </a>
+              </li>
+              </ul>
+            </li>
+            <li class="contact-menu dropdown">
+                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                  Contact
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="mailto:dan@danfinlay.com" id="emailLink">
+                      Email
+                    </a>
+                  </li>
+                  <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="https://twitter.com/danfinlay" rel="me">
+                      Twitter
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="http://www.linkedin.com/profile/view?id=36264279&trk=tab_pro" rel="me">
+                      LinkedIn
+                    </a>
+                </li>
+                <li role="presentation">
+                    <a role="menuitem" tabindex="-1" href="https://github.com/flyswatter" rel="me">
+                      Github
+                    </a>
+                </li>
+                <li role="presentation">
+                  <a role="menuitem" tabindex="-1" href="http://www.youtube.com/user/yourworstfriend" rel="me">
+                    YouTube
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+       </div>
+    </div>
+
+    <div class="tech-span span4">
+      <strong><h3>3D Printing</h3></strong>
+      I built and calibrated a 3D printer.  Here are a few related projects:<br>
+      <div id="3dPrintingCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#3dPrintingCarousel" data-slide-to="0"></li>
+          <li data-target="#3dPrintingCarousel" data-slide-to="1"></li>
+          <li data-target="#3dPrintingCarousel" data-slide-to="2" class="active"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="item">
+            <img src="/img/batbuddah.jpg">
+            <div class="carousel-caption" style="color:white">
+              BatBuddah!
+            </div>
+          </div>
+          <div class="item">
+            <img src="/img/fanmount.jpg">
+            <div class="carousel-caption" style="color:white">
+              A fan mount I designed for cooling extruded plastic.
+            </div>
+          </div>
+          <div class="active item">
+            <img src="/img/i3.jpg">
+            <div class="carousel-caption" style="color:white">
+              The Prusa i3 I built.
+            </div>
+          </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#3dPrintingCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#3dPrintingCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+      You can see the objects I've designed and shared on <a href="http://www.thingiverse.com/danfinlay/designs">my thingiverse account</a>.<br><br>
+      
+      For more talk about my 3D printing hobby, check out that category on <a href="http://danfinlay.blogspot.com/search/label/3dprinting">my blog</a>.
+      </div>
+      <div class="tech-span span4">
+      <strong><h3>Kinect</h3></strong>
+      I've had a lot of fun programming with the Xbox Kinect, which is basically a 3D depth sensor + skeleton tracking.<br>
+      <div id="KinectCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#KinectCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#KinectCarousel" data-slide-to="1"></li>
+          <li data-target="#KinectCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item">
+            <img src="/img/kinect-painter.jpg">
+            <div class="carousel-caption" style="color:white">
+              One of my first projects was a painting program for Kinect.  You can see its artwork live <a href="http://twitter.com/KinectPainter">@KinectPainter</a>.
+            </div>
+          </div>
+          <div class="item">
+            <img src="/img/voxel-zigfu.jpg">
+            <div class="carousel-caption" style="color:white">
+              I wrote a program to puppeteer minecraft characters using the kinect.  The source code is <a href="https://github.com/flyswatter/voxel-zigfu">here</a>, and you can see a video of it in action <a href="http://www.youtube.com/watch?v=AqW8RVpyz5Y">here</a>.
+            </div>
+          </div>
+          <div class="item">
+            <img src="/img/chinrest.jpg">
+            <div class="carousel-caption" style="color:white">
+              Using the kinect to design a more comfortable violin chin rest.
+            </div>
+          </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#KinectCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#KinectCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+      Ultimately I expect a similar device to become a household 3D scanner, as well as be used for gesture recognition.  Right now the resolution is a little too low, and the latency a little too high.
+      </div>
+      <div class="tech-span span4">
+      <strong><h3>Bloccoli</h3></strong>
+      My time teaching using <a href="http://mit.scratch.edu">MIT's Scratch</a> imbued me with a deep respect for the power of visual blocks to empower young children to program their own games and animations.<br>
+      <img src="/img/bloccoli-sample.gif"><br>
+      Still a work in progress, <a href="http://bloccoli.herokuapp.com">Bloccoli</a> allows any Blockly-compatible blocks to easily be imported into the same environment, which then renders the code into a real web page, run right in a browser iFrame.<br>
+      </div>
+      <div class="tech-span span4">
+      <center><img src="/img/nodejs.png" style="background:#444;padding:5px"></center><br>
+      My latest programming fix has been Node.js, and the notion that you can use Javascript anywhere, from web sites, to servers, to video games.<br><br>
+      I've published <a href="https://npmjs.org/~danfinlay">a few modules</a> on the npm package repository, attended NodeConf 2013, and have generally grown to really cherish the Node.js community for its diversity, creativity, and friendliness.<br><br>
+      In fact, this site is served with Node, using domains for error handling and streams for delivering all of the content.  That means you start loading the web page before the server has even read the whole first file involved.<br><br>
+      The source code is on github <a href="github.com/flyswatter/danfinlay.com">here</a>.
+      </div>
+      
+      </div>
+      <div class="technology row-fluid">
+      <div class="tech-span span4">
+      <h3>Resistance Probability Estimator</h3>
+      I made <a href="http://www.danfinlay.com/projects/resistance/probability/">a web app</a> for calculating probabilities in the board game <a href="http://en.wikipedia.org/wiki/The_Resistance_(game)">The Resistance</a>.<br><br>
+      It's a very intense game where a couple people in the group are secretly chosen as spies, and the group has to select teams to go on missions, but the spies have the ability to secretly sabotage missions they are on.<br><br>
+      I took the opportunity to apply some of the Bayesian statistics I'd been learning over at Udacity's Statistics 101 course, and the result is a very precise, systematic approach to the logical side of this very bluff-heavy game.
+      </div>
+      <div class="tech-span span4">
+      <strong><h3>e-Deliberation</h3></strong>
+      Partly inspired by the difficulty of large group cohesion during the Occupy protests, I've put a lot of thought into how the internet could facilitate consensus:<br>
+      <div id="eDemocracyCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#eDemocracyCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#eDemocracyCarousel" data-slide-to="1"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item">
+            <img src="/img/gitthought.gif">
+            <div class="carousel-caption" style="color:white">
+              GitThought: A sketch of a discussion engine.
+            </div>
+          </div>
+          <div class="item">
+            <img src="/img/convictions.jpg">
+            <div class="carousel-caption" style="color:white">
+              Convictions: <a href="http://my-convictions.appspot.com/">A working prototype</a> of a discussion system I made. (<a href="https://github.com/flyswatter/convictions">source</a>)
+            </div>
+          </div>
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#eDemocracyCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#eDemocracyCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+        You can read several of my thoughts in this field on <a href="http://danfinlay.blogspot.com/search/label/eDemocracy">my blog</a>.
+      </div>
+      
+      <div class="tech-span span4">
+      <strong><h3>Hopswap</h3></strong>
+      My first Web 2.0 site was designed to allow people to trade home-brewed beer on the internet.  It was built entirely in client-side Javascript using the <a href="https://parse.com/">Parse</a> framework.<br>
+      <img src="/img/hopswap.jpg" style="width:100%"><br>
+      Ultimately I became aware of <a href="http://brewshuffle.com/">a competitor</a> that had been around for years, had partnerships, and still hadn't gained a strong following, making me think the audience wasn't big enough to fight for.<br><br>
+      I have however re-used pieces of this code-base for projects such as <a href="http://strideprogram.org/oprcrimes/">OPR Crime Map</a>.
+      </div>
+      <div class="tech-span span4">
+      <strong><h3>Fartomin</h3></strong>
+      My first major foray into programming was a joke that asked a question:  If Apple's Terms of Service say they will reject apps that 'duplicate functionality, such as fart apps', what would they do for a very innovative fart app?<br>
+      <div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+      <iframe width="320px" height="240px"  src="//www.youtube.com/embed/z_yRm4K_zI8" frameborder="0" allowfullscreen></iframe>
+      </div>
+      The answer is they rejected it.  But I swear it was the most expressive, creative fart app ever.  Check out the promo video I made for it:<br>
+      </div>
+      
+
+    <div class="row-fluid" style="padding:0px;margin:0px">
+      <div class="span12" style="padding:0px;margin:0px">
+        <center>
+          <p>
+            <em><br>
+              Site made by Dan Finlay 2013.
+            </em>
+          </p>
+        </center>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">$(document).ready(readyFunction);</script>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7435966-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
+ 
